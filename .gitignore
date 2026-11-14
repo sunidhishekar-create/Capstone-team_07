@@ -11,7 +11,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Datasets (large, auto-downloaded by the code)
-data/
+/data/
 *.npz
 *.pkl
 
@@ -22,8 +22,16 @@ data/
 checkpoints/
 runs/
 results/**/*.npy
+# Half-written files from atomic saves (checkpoint.pt.tmp, metrics.csv.tmp, ...)
+*.tmp
 
-# Small result summaries (csv / json / png) stay tracked on purpose
+# Small result summaries (csv / json / png / log) stay tracked on purpose. The negations
+# also override a global gitignore that ignores e.g. *.log. (final_model.pt and
+# checkpoint.pt stay ignored through *.pt above.)
+!results/**/*.csv
+!results/**/*.json
+!results/**/*.png
+!results/**/*.log
 
 # Editor / OS
 .vscode/*
